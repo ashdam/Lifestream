@@ -78,7 +78,7 @@ internal static class Lang
         internal const string HighQuality = "";
     }
 
-    internal static string[] LogInPartialText => GameText.Fragments(
+    internal static GameTextPattern LogInPartialText => new(
         Svc.Data.GetExcelSheet<Lobby>().GetRow(25).Text,
         Svc.Data.GetExcelSheet<Lobby>().GetRow(95).Text,
         Svc.Data.GetExcelSheet<Lobby>().GetRow(96).Text,
@@ -86,7 +86,7 @@ internal static class Lang
 
     internal static string[] Aethernet => [GameText.Dialogue("transport/Aetheryte", 1)];
     internal static string[] VisitAnotherWorld => [GameText.Dialogue("transport/Aetheryte", 3)];
-    internal static string[] ConfirmWorldVisit => GameText.Fragments(
+    internal static GameTextPattern ConfirmWorldVisit => new(
         Svc.Data.GetExcelSheet<Addon>().GetRow(12519).Text,
         Svc.Data.GetExcelSheet<Addon>().GetRow(12624).Text);
 
@@ -94,10 +94,10 @@ internal static class Lang
     internal static string[] TravelToFirmament => [GameText.Dialogue("transport/AetheryteIshgard", 0)];
     public static string[] ResidentialDistrict => [GameText.Dialogue("transport/Aetheryte", 2)];
     public static string[] GoToWard => [Svc.Data.GetExcelSheet<Addon>().GetRow(6349).Text.GetText().Trim()];
-    public static string[] TravelTo => GameText.Fragments(Svc.Data.GetExcelSheet<Addon>().GetRow(6355).Text);
+    public static GameTextPattern TravelTo => new(Svc.Data.GetExcelSheet<Addon>().GetRow(6355).Text);
 
     public static string[] GoToSpecifiedApartment => [GameText.Dialogue("custom/003/HouFixMansionEntrance_00359", 2)];
-    public static string[] EnterApartmenr => GameText.Fragments(
+    public static GameTextPattern EnterApartmenr => new(
         Svc.Data.GetExcelSheet<Addon>().GetRow(6782).Text,
         Svc.Data.GetExcelSheet<Addon>().GetRow(6784).Text);
     public static string[] GoToMyApartment => [GameText.Dialogue("custom/003/HouFixMansionEntrance_00359", 0)];
@@ -113,7 +113,7 @@ internal static class Lang
     ];
     public static string[] ConfirmHouseEntrance => [Svc.Data.GetExcelSheet<Warp>().GetRow(131148).Question.GetText()];
 
-    public static string[] UnableToSelectWorldForDcv => GameText.Fragments(Svc.Data.GetExcelSheet<Lobby>().GetRow(1218).Text);
+    public static GameTextPattern UnableToSelectWorldForDcv => new(Svc.Data.GetExcelSheet<Lobby>().GetRow(1218).Text);
 
     public static readonly string[] RemainingSubTime = ["sqex.to/Msp"];
 
